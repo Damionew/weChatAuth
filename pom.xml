@@ -74,20 +74,6 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
-			<plugin>
-            	<!-- run as->maven build->tomcat7:redeploy -->
-            	<!-- tomcat7-maven-plugin插件利用Tomcat的manager模块实现war包部署 -->
-			    <groupId>org.apache.tomcat.maven</groupId>
-			    <artifactId>tomcat7-maven-plugin</artifactId>
-			    <version>2.2</version>
-			    <configuration>
-                    <url>https://damionew.top/manager/text</url>
-			        <username>damionew</username>
-			        <password>2019$tomcat</password>
-			        <update>true</update>
-			        <path>/wx</path>
-                </configuration>
-			</plugin>
 		</plugins>
 		<resources>
 			<resource>
