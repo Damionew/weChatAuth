@@ -37,11 +37,22 @@ public class WeChatController {
 	// 无论直接打开还是做页面302重定向时候，必须带此参数【必需】
 	public static final String wechat_redirect = "";
 	public static final String APPSECRET = "b51067db03de9fa9d785e99db70b937e"; 
+	
+	/**
+	 * 初始页面
+	 * @return
+	 */
 	@RequestMapping("/weChat")
 	public String weChatTest() {
 		log.info("weChat");
 		return "weChat";
 	}
+	
+	/**
+	 * 点击页面超链请求此处
+	 * @param req
+	 * @param res
+	 */
 	@ResponseBody
 	@RequestMapping("/weChat/auth")
 	public void weChatAuth(HttpServletRequest req,HttpServletResponse res) {
@@ -58,6 +69,12 @@ public class WeChatController {
 			e.printStackTrace();
 		}
 	}
+	
+	/**
+	 * 上方 REDIRECT_URI 变量中带有的回调请求，即用户点击确定授权后所做的操作
+	 * @param req
+	 * @param res
+	 */
 	@ResponseBody
 	@RequestMapping("weChat/callBack")
 	public void weChatCallBack(HttpServletRequest req,HttpServletResponse res){
